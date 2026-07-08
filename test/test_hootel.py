@@ -10,11 +10,16 @@ class TestHootel(object):
     def setup_method(self):
         URL = 'http://hotel-v3.progmasters.hu/'
         options = Options()
-        options.add_argument("start-maximized")
+        # options.add_argument("start-maximized")
         options.add_argument("--headless")
         options.add_experimental_option("detach", True)
         self.browser = webdriver.Chrome(options=options)
         self.browser.get(URL)
+        print(self.browser.get_window_size()) #{'width': 780, 'height': 580}
+        self.browser.maximize_window()
+        print(self.browser.get_window_size()) # {'width': 800, 'height': 600}
+        self.browser.set_window_size(1024,700)
+        print(self.browser.get_window_size())
 
     def teardown_method(self):
         self.browser.quit()
