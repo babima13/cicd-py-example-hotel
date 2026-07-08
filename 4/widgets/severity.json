@@ -1,0 +1,1 @@
+[{"uid":"88d28e8296ff745e","name":"test_hotel_list","time":{"start":1783526711486,"stop":1783526712583,"duration":1097},"status":"passed","severity":"normal"},{"uid":"aa1a9df7ba896efc","name":"Hootel Login","time":{"start":1783526706809,"stop":1783526708562,"duration":1753},"status":"passed","severity":"trivial"}]
