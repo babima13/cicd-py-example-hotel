@@ -29,20 +29,25 @@ class TestHootel(object):
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.tag("login", "hotel", "selenium")
     def test_login(self):
+        email = 'hiwasi1765@wisnick.com'
+        password = 'tesztelek2021'
+
         login_btn = self.browser.find_element(By.XPATH, '//a[@class="nav-link"]')
         login_btn.click()
 
         email_input = self.browser.find_element(By.ID, 'email')
-        email_input.send_keys('hiwasi1765@wisnick.com')
+        email_input.send_keys(email)
 
         password_input = self.browser.find_element(By.ID, 'password')
-        password_input.send_keys('tesztelek2021')
+        password_input.send_keys(password)
 
         submit_btn = self.browser.find_element(By.NAME, 'submit')
         submit_btn.click()
         time.sleep(1)
 
         logout_btn = self.browser.find_element(By.ID, 'logout-link')
+
+        allure.dynamic.description(f"email: {email}, password = {password}")
 
         assert logout_btn.text == "Kilépés"
 
